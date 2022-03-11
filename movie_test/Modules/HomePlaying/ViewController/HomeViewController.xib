@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="movie_test" customModuleProvider="target">
+            <connections>
+                <outlet property="searchBar" destination="dRV-Pa-A3J" id="ied-vF-2Fd"/>
+                <outlet property="tableView" destination="cE5-sf-TwE" id="9SM-Du-M4U"/>
+                <outlet property="tableView2" destination="q1w-J3-IFG" id="IpN-gw-iqo"/>
+                <outlet property="tableView3" destination="RbR-ZR-6Rt" id="GNk-IU-VQq"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="dRV-Pa-A3J">
+                    <rect key="frame" x="0.0" y="44" width="414" height="51"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="7aM-5P-Rvn"/>
+                    </connections>
+                </searchBar>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="33" estimatedSectionHeaderHeight="-1" sectionFooterHeight="33" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="cE5-sf-TwE">
+                    <rect key="frame" x="0.0" y="156" width="414" height="706"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="VHv-Zt-igI"/>
+                        <outlet property="delegate" destination="-1" id="AeM-5N-ReA"/>
+                    </connections>
+                </tableView>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="k5s-qD-sdy">
+                    <rect key="frame" x="26" y="110" width="360" height="32"/>
+                    <segments>
+                        <segment title="Popular"/>
+                        <segment title="Upcoming"/>
+                        <segment title="Top Rated"/>
+                    </segments>
+                    <connections>
+                        <action selector="segmentPressed:" destination="-1" eventType="valueChanged" id="nRk-YP-X3T"/>
+                    </connections>
+                </segmentedControl>
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="q1w-J3-IFG">
+                    <rect key="frame" x="0.0" y="156" width="414" height="706"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="PBC-UV-lOc"/>
+                        <outlet property="delegate" destination="-1" id="HV4-bv-piM"/>
+                    </connections>
+                </tableView>
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="RbR-ZR-6Rt">
+                    <rect key="frame" x="0.0" y="156" width="414" height="706"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="HR4-Tq-cBf"/>
+                        <outlet property="delegate" destination="-1" id="x6K-ij-ZPH"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="dRV-Pa-A3J" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="52f-G2-VMn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dRV-Pa-A3J" secondAttribute="trailing" id="5b8-Ld-hYA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="RbR-ZR-6Rt" secondAttribute="trailing" id="JWD-Ez-XiR"/>
+                <constraint firstItem="q1w-J3-IFG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KQU-J0-1bU"/>
+                <constraint firstItem="cE5-sf-TwE" firstAttribute="top" secondItem="k5s-qD-sdy" secondAttribute="bottom" constant="15" id="OLQ-DD-zlv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="RbR-ZR-6Rt" secondAttribute="bottom" id="PMD-BL-Ms6"/>
+                <constraint firstItem="cE5-sf-TwE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SBz-OY-4Na"/>
+                <constraint firstItem="q1w-J3-IFG" firstAttribute="top" secondItem="k5s-qD-sdy" secondAttribute="bottom" constant="15" id="SuQ-Xy-vFU"/>
+                <constraint firstItem="k5s-qD-sdy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="26" id="TEb-bx-Idj"/>
+                <constraint firstItem="k5s-qD-sdy" firstAttribute="top" secondItem="dRV-Pa-A3J" secondAttribute="bottom" constant="15" id="XJM-1i-kxM"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cE5-sf-TwE" secondAttribute="trailing" id="fuE-P7-Pg8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="q1w-J3-IFG" secondAttribute="bottom" id="hKL-iM-D2u"/>
+                <constraint firstItem="RbR-ZR-6Rt" firstAttribute="top" secondItem="k5s-qD-sdy" secondAttribute="bottom" constant="15" id="mQB-C1-Usg"/>
+                <constraint firstItem="dRV-Pa-A3J" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="meC-5f-pHS"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="k5s-qD-sdy" secondAttribute="trailing" constant="28" id="t7h-JC-f19"/>
+                <constraint firstItem="q1w-J3-IFG" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="tzo-DH-Gzd"/>
+                <constraint firstItem="RbR-ZR-6Rt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uze-7O-P9u"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="cE5-sf-TwE" secondAttribute="bottom" id="v5K-Zc-zBC"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="32.8125"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
