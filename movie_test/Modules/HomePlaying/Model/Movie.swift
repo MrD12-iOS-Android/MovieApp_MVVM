@@ -13,13 +13,15 @@ struct Movie: Codable {
     var title: String?
     var overview: String?
     var poster: String?
+    var video: Bool?
     private var voteAverage: Decimal
     var rating: NSDecimalNumber {
         get { return NSDecimalNumber(decimal: voteAverage) }
     }
 
-    init(id: Int, title: String, overview: String, poster: String, voteAverage: Decimal) {
+    init(id: Int, title: String, overview: String, poster: String, voteAverage: Decimal, video: Bool) {
         self.id = id
+        self.video = video
         self.title = title
         self.overview = overview
         self.poster = poster
@@ -31,7 +33,7 @@ struct Movie: Codable {
     }
 
     enum CodingKeys: String, CodingKey {
-        case id, title, overview
+        case id, title, overview, video
         case poster = "poster_path"
         case voteAverage = "vote_average"
     }

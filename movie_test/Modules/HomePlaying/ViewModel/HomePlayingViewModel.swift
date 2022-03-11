@@ -54,6 +54,7 @@ class NowPlayingViewModel {
                 self?.currentPage += 1
 //                print("asdasdasdasd")
 //                print(self?.upcomingList.value)
+                print(result.movies[0].video)
             case .failure(let error):
                 self?.state.value = .error(error)
             }
